@@ -4,8 +4,11 @@ import {
   ContentState, EditorState, convertFromHTML, convertToRaw,
 } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
-import { Editor } from 'react-draft-wysiwyg';
-
+import dynamic from 'next/dynamic';
+const Editor = dynamic(
+  () => import('react-draft-wysiwyg').then((mod) => mod.Editor),
+  { ssr: false },
+);
 import DynamicOptionList from './dynamic-option-list';
 import { get } from './stores/requests';
 import ID from './UUID';
