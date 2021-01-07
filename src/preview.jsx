@@ -155,5 +155,5 @@ export default class Preview extends React.Component {
   }
 }
 Preview.defaultProps = {
-  showCorrectColumn: false, files: [], editMode: false, editElement: null, className: 'react-form-builder-preview float-left',
+  showCorrectColumn: false, files: [], editMode: false, editElement: null, className: 'react-form-builder-preview one-container',
 };

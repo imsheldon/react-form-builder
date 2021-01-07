@@ -1,12 +1,38 @@
+nav  {
+   &.MuiList-root {
+    background: gray;
+    color: #fff;
+    font-weight: 700;
+    .MuiListItemText-inset{
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+button {
+  &.MuiButton-contained {
+    margin-right: 10px;
+  }
+}
+
 .react-form-builder {
+  .one-container {
+    float: left;
+    display: inline-block;
+    margin: 10px 5px;
+  }
+
   .react-form-builder-preview {
     position: relative;
-    width: 70%;
+    width: 73%;
     border: 1px solid #ddd;
     background: #fafafa;
     padding: 10px;
     box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
-    min-height: 750px;
+    min-height: 650px;
+    margin-top: -5px;
 
     .preview-page-break {
       padding: 5px 0;
@@ -221,13 +247,13 @@
   }
 
   .react-form-builder-toolbar {
-    width: 250px;
+    width: 25%;
     background: #fff;
-    margin-top: -30px;
 
     h4 {
       margin-top: 0;
       text-align: center;
+      margin-bottom: 15px;
     }
     .form-group {
       padding: 10px;
@@ -235,6 +261,10 @@
     }
     ul {
       padding: 0;
+      height: 100%;
+      max-height: 750px;
+      overflow-y: scroll;
+
       li {
         cursor: pointer;
         list-style: none;
@@ -247,6 +277,27 @@
       }
     }
   }
+}
+
+.sortableContainerCheckList {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+
+.sortableContainer {
+  max-height: 650px;
+  overflow-y: scroll;
+}
+
+.previewContainer {
+  max-height: 650px;
+  overflow-y: scroll;
+}
+
+.modal-content {
+  max-height: inherit;
+  overflow-y: auto;
 }
 
 .image-upload-container {
@@ -274,85 +325,6 @@
 .btn-image-clear {
   margin: 15px 0;
   padding: 15px;
-}
-
-@media ( max-width: $screen-sm-min ) {
-  .react-form-builder {
-    position: relative;
-
-    .react-form-builder-preview {
-      width: 100%;
-
-      .edit-form {
-        width: 100%;
-        overflow: scroll;
-
-        .btn {
-          margin-top: 10px;
-        }
-
-        .dynamic-option-list ul li input.form-control {
-          width: 100%;
-        }
-      }
-
-      .Sortable .rfb-item .toolbar-header .toolbar-header-buttons {
-        right: -15px;
-        .btn {
-          margin-right: 5px;
-          border-radius: 50%;
-          padding: 7px 0px 0 3px;
-          width: 35px;
-          height: 35px;
-        }
-      }
-    }
-
-    .react-form-builder-toolbar {
-
-      h4 {
-        padding: 10px;
-        background: #7a0019;
-        color: #fff;
-      }
-
-      width: 100%;
-      position: fixed;
-      z-index: 900;
-      bottom: -320px;
-
-      -webkit-transition: transform 0.5s;
-      transition: transform 0.5s;
-
-      -webkit-transform: translate(0,0);
-      transform: translate(0,0);
-
-      right: 0;
-      border-top: 2px solid #ccc;
-
-      ul {
-        height: 300px;
-        overflow-x: scroll;
-      }
-    }
-
-    .active-toolbar {
-      -webkit-transform: translate(0,-300px);
-      transform: translate(0,-300px);
-    }
-  }
-
-  .m-signature-pad {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: auto;
-    min-width: 250px;
-    min-height: 140px;
-    margin: 0;
-  }
 }
 
 .visible_marks {
@@ -404,7 +376,7 @@
 }
 
 .form-place-holder {
-  margin:10px; 
+  margin:10px;
   border:2px dashed #bbb;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
@@ -413,3 +385,96 @@
   text-align:center;
   font:20pt bold,"Vollkorn";color:#bbb
 }
+
+@media ( max-width: $screen-sm-min ) {
+  .react-form-builder {
+
+    .react-form-builder-preview {
+      width: 100%;
+
+      .edit-form {
+        width: 100%;
+        overflow: scroll;
+
+        .btn {
+          margin-top: 10px;
+        }
+
+        .dynamic-option-list ul li input.form-control {
+          width: 100%;
+        }
+      }
+
+      .Sortable .rfb-item .toolbar-header .toolbar-header-buttons {
+        right: -15px;
+        .btn {
+          margin-right: 5px;
+          border-radius: 50%;
+          padding: 7px 0px 0 3px;
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+
+    .react-form-builder-toolbar {
+
+      h4 {
+        padding: 10px;
+        background: #7a0019;
+        color: #fff;
+      }
+
+      width: 100%;
+      position: inherit;
+      z-index: 900;
+
+      -webkit-transition: transform 0.5s;
+      transition: transform 0.5s;
+
+      -webkit-transform: translate(0,0);
+      transform: translate(0,0);
+
+      right: 0;
+      border-top: 2px solid #ccc;
+
+      ul {
+        height: 300px;
+        overflow-x: scroll;
+      }
+    }
+
+    .active-toolbar {
+      -webkit-transform: translate(0,-300px);
+      transform: translate(0,-300px);
+    }
+  }
+
+  .m-signature-pad {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    min-width: 250px;
+    min-height: 140px;
+    margin: 0;
+  }
+}
+
+.checklist-footer{
+  width: 100%;
+  margin-top: 30px;
+  left: 0;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .react-form-builder {
+    .react-form-builder-preview {
+      width: 71%;
+    }
+  }
+}
+
+@media (max-width: 767px) and (min-width: 320px) {}

@@ -305,7 +305,7 @@ export default class Toolbar extends React.Component {
 
   render() {
     return (
-      <div className="react-form-builder-toolbar float-right">
+      <div className="react-form-builder-toolbar one-container">
         <h4>Toolbox</h4>
         <ul>
           {

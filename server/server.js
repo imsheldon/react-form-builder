@@ -7,6 +7,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var cors = require('cors');
 var api = require('./api/routes');
 var handleForm = require('./api/form');
 var formData = require('./api/formData');
@@ -23,6 +24,7 @@ app.set('view engine', 'ejs');
 
 app.set('port', (process.env.PORT || isProduction ? 8080 : 5005));
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
